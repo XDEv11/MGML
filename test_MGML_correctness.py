@@ -22,7 +22,7 @@ class MGMLTestCase(unittest.TestCase):
 		print(flush=True);
 
 	def test_MCBM_file(self):
-		f = open('testcase_MCBM.txt', 'r');
+		f = open('testcase_MCBM_wans.txt', 'r');
 
 		tc = int(f.readline().rstrip('\n'));
 		for _ in range(tc):
@@ -63,7 +63,7 @@ class MGMLTestCase(unittest.TestCase):
 		print(flush=True);
 		
 	def test_MWBM_file(self):
-		f = open('testcase_MWBM.txt', 'r');
+		f = open('testcase_MWBM_wans.txt', 'r');
 
 		tc = int(f.readline().rstrip('\n'));
 		for _ in range(tc):
@@ -110,7 +110,7 @@ class MGMLTestCase(unittest.TestCase):
 		print(flush=True);
 		
 	def test_MCM_file(self):
-		f = open('testcase_MCM.txt', 'r');
+		f = open('testcase_MCM_wans.txt', 'r');
 
 		tc = int(f.readline().rstrip('\n'));
 		for _ in range(tc):

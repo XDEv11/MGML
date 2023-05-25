@@ -6,7 +6,7 @@ CPPTEST = test_MGML
 PYTEST = test_MGML_correctness.py
 GEN = gen_MGML
 
-all: cpp py gen
+all: cpp py 
 
 cpp: $(OBJ) $(CPPTEST)
 	@echo "Testing in C++..."
