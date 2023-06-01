@@ -54,6 +54,8 @@ std::pair<std::vector<std::vector<int>>, int> gen_MCBM(std::ostream& os, int max
 	edge.resize(m);
 	for (auto& [x, y] : edge) adjx[x].push_back(y);
 
+	std::cerr << "MCBM: " << nx << ", " << ny << ", " << m << std::endl;
+
 	os << nx << '\n';
    	os << ny << '\n';
 	for (int x{0}; x < nx; ++x) {
@@ -70,6 +72,8 @@ std::vector<std::vector<long long>> gen_MWBM(std::ostream& os, int max_n) {
 		for (int y{0}; y < n; ++y) {
 			weight[x][y] = randint(std::numeric_limits<int>::min(), std::numeric_limits<int>::max());
 		}
+
+	std::cerr << "MWBM: " << n << std::endl;
 
 	os << n << '\n';
 	for (int x{0}; x < int(weight.size()); ++x) {
@@ -118,6 +122,8 @@ std::vector<std::vector<int>> gen_MCM(std::ostream& os, int max_n, int max_m) {
 	int m{int(randint(0, std::min(int(edge.size()), max_m)))};
 	edge.resize(m);
 	for (auto& [u, v] : edge) adj[u].push_back(v), adj[v].push_back(u);
+  
+	std::cerr << "MCM: " << n << ", " << m << std::endl;
 
 	os << n << '\n';
 	for (int u{0}; u < n; ++u) {
@@ -135,7 +141,7 @@ void gen_MCBM_wans(std::ostream& os) {
 }
 
 void gen_MCBM_woans(std::ostream& os) {
-	gen_MCBM(os, 1000, 1000, std::numeric_limits<int>::max());
+	gen_MCBM(os, 1500, 1500, 2000000);
 }
 
 void gen_MWBM_wans(std::ostream& os) {
@@ -153,7 +159,7 @@ void gen_MWBM_wans(std::ostream& os) {
 }
 
 void gen_MWBM_woans(std::ostream& os) {
-	gen_MWBM(os, 500);
+	gen_MWBM(os, 1000);
 }
 
 void gen_MCM_wans(std::ostream& os) {
@@ -164,7 +170,7 @@ void gen_MCM_wans(std::ostream& os) {
 }
 
 void gen_MCM_woans(std::ostream& os) {
-	gen_MCM(os, 1000, 100000);
+	gen_MCM(os, 1000, 1000000);
 }
 
 int main() {

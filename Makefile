@@ -6,7 +6,7 @@ CPPTEST = test_MGML
 PYTEST = test_MGML_correctness.py
 GEN = gen_MGML
 
-all: cpp py 
+all: cpp py gen
 
 cpp: $(OBJ) $(CPPTEST)
 	@echo "Testing in C++..."
@@ -19,6 +19,7 @@ py: $(PYSO)
 	@echo "Testing in Python..."
 	@python $(PYTEST) 1>test.log
 	@cat test.log
+	@rm test.log
 
 gen: $(GEN)
 
